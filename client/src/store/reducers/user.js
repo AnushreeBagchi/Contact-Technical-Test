@@ -1,12 +1,12 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { addCustomer } from "../actions/customer";
+import { adduser } from "../actions/user";
 
 const reducer = createReducer(
   {},
   {
-    [addCustomer.type]: (customer, action) => {
+    [adduser.type]: (user, action) => {
       const key = Object.keys(action.payload);
-      customer[key] = action.payload[key];
+      user[key] = action.payload[key];
     }
   }
 );

@@ -21,13 +21,13 @@ export const fetchCards = () => async (dispatch) => {
     })
 };
 
-export const fetchAvailableCards = (customer) => async (dispatch) => {
+export const fetchAvailableCards = (user) => async (dispatch) => {
     return dispatch({
       type: "apiCallBegan",
       payload: {
         url : "/availableCards",
         method: "POST",
-        data : customer,
+        data : user,
         onSuccess: fetchAvailableCardsAction.type,
         onError: FETCH_AVAILABLE_CARDS_FAILED_MSG
       }

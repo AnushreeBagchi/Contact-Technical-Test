@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { connect } from "react-redux";
-import { addCustomer } from "../../store/actions/customer";
+import { adduser } from "../../store/actions/user";
 import "./CustomTextField.css";
 
 class CustomTextField extends React.Component {
@@ -16,7 +16,7 @@ class CustomTextField extends React.Component {
       let hasError = e.target.value.length < field.minLength ? true : false;
 
       this.setState({ hasError });
-      this.props.addCustomer({ [field.name]: e.target.value });
+      this.props.adduser({ [field.name]: e.target.value });
     };
 
     return (
@@ -43,8 +43,8 @@ const mapStateToProps = (state) => ({
   state: state,
 });
 const mapDispatchToProps = (dispatch) => ({
-  addCustomer: (data) => {
-    dispatch(addCustomer(data));
+  adduser: (data) => {
+    dispatch(adduser(data));
   },
 });
 

@@ -3,10 +3,10 @@ import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
-import "./Customer.css";
+import "./user.css";
 import {
-  addCustomer,
-} from "../../store/actions/customer";
+  adduser,
+} from "../../store/actions/user";
 import {
   DETAILS,
 } from "../../constants/constants";
@@ -16,14 +16,14 @@ import { Container } from "@material-ui/core";
 import TextFieldGenerator from "../TextFieldGenerator/TextFieldGenerator.jsx";
 import Nav from "../Nav/Nav.jsx";
 
-class Customer extends React.Component {
+class user extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     const handleChange = (e, field) => {
-      this.props.addCustomer({ [field]: e.target.value });
+      this.props.adduser({ [field]: e.target.value });
     };
     const goToResult = () => {
       this.props.history.push({
@@ -32,11 +32,7 @@ class Customer extends React.Component {
       });
     };
 
-    const isDisabled = () => {
-      // let customer = this.props.state.customer;
-      // let requiredField = DETAILS.textFields.filter(field => field.required === true);
-      return false;
-    }
+   
     return (
       <ThemeConsumer>
         {({ theme }) => (
@@ -72,7 +68,6 @@ class Customer extends React.Component {
                                 variant="contained"
                                 color="primary"
                                 onClick={goToResult}
-                                disabled={isDisabled()}
                               >
                                 Submit
                               </Button>
@@ -96,10 +91,10 @@ const mapStateToProps = (state) => ({
   state: state,
 });
 const mapDispatchToProps = (dispatch) => ({
-  addCustomer: (data) => {
-    dispatch(addCustomer(data));
+  adduser: (data) => {
+    dispatch(adduser(data));
   }
 });
 
-export {Customer};
-export default connect(mapStateToProps, mapDispatchToProps)(Customer);
+export {user};
+export default connect(mapStateToProps, mapDispatchToProps)(user);

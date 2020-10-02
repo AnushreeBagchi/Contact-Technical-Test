@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for Customer Renders correctly 1`] = `
+exports[`Tests for user Renders correctly 1`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>

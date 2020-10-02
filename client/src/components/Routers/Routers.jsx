@@ -5,7 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import NotFound from '../NotFound.jsx';
-import Customer from '../Customer/Customer.jsx';
+import user from '../user/user.jsx';
 
 
 export default function Routers() {
@@ -13,7 +13,7 @@ export default function Routers() {
     <Router>
       <div>
         <Switch>
-            <Route exact path="/" component={Customer}/>
+            <Route exact path="/" component={user}/>
             <Route exact component={NotFound}/>
         </Switch>
       </div>
