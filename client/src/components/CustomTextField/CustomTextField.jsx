@@ -5,18 +5,14 @@ import { adduser } from "../../store/actions/user";
 import "./CustomTextField.css";
 
 class CustomTextField extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hasError: false,
-    };
-  }
+  
   render() {
     const onChange = (e, field) => {
-      let hasError = e.target.value.length < field.minLength ? true : false;
-
-      this.setState({ hasError });
-      this.props.adduser({ [field.name]: e.target.value });
+      let value = field.type == "number" ? Number(e.target.value) : e.target.value;
+      if(field.name == "gender") {
+        value = e.target.value.toLowerCase();
+      }
+      this.props.adduser({ [field.name]: value });
     };
 
     return (

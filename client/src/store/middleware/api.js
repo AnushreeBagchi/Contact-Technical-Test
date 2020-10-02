@@ -5,17 +5,18 @@ const api =  ({dispatch}) => next => async action => {
     if (action.type !== "apiCallBegan") return next(action);
     
     next(action);
-    const {url, method, data, onSuccess, onError} = action.payload;
+    const {url, method, data, onSuccess, onError, headers} = action.payload;
     try{
         const response  = await axios.request({
             baseURL,
             url,
             method, 
-            data
+            data,
+            headers
         });
         dispatch({type: onSuccess, payload: response.data});
-    } catch (error) {
-        dispatch({type: "onError", error: `${error.message} (${onError})`});
+    } catch ( error) {
+        dispatch({type: onError, payload: error.response.data });
     }
 
 }

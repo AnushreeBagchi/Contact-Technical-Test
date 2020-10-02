@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for CustomTextField  Renders correctly 1`] = `
+<WithStyles(ForwardRef(Card))
+  elevation={3}
+>
+  <WithStyles(ForwardRef(CardContent))>
+    <WithStyles(ForwardRef(Typography))
+      className="cardName"
+      component="h2"
+      gutterBottom={true}
+      variant="h5"
+    >
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-errorGrid-2"
+        container={true}
+        justify="center"
+      >
+        <WithStyles(ForwardRef(Grid))
+          item={true}
+          lg={6}
+          md={6}
+          xs={12}
+        >
+          <WithStyles(ForwardRef(Typography))
+            variant="h6"
+          >
+            <center>
+              Your form had below errors. Please review.
+               
+            </center>
+          </WithStyles(ForwardRef(Typography))>
+          <WithStyles(ForwardRef(Grid))
+            container={true}
+            justify="center"
+          >
+            <WithStyles(ForwardRef(List))>
+              <WithStyles(ForwardRef(ListItem))
+                className="makeStyles-list-4"
+                key="0"
+              >
+                - 
+                name
+                 
+                is missing
+                .
+              </WithStyles(ForwardRef(ListItem))>
+            </WithStyles(ForwardRef(List))>
+          </WithStyles(ForwardRef(Grid))>
+        </WithStyles(ForwardRef(Grid))>
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Typography))>
+    <WithStyles(ForwardRef(Button))
+      className="btn"
+      color="primary"
+      onClick={[Function]}
+      size="medium"
+    >
+      Navigate to Home
+    </WithStyles(ForwardRef(Button))>
+  </WithStyles(ForwardRef(CardContent))>
+</WithStyles(ForwardRef(Card))>
+`;

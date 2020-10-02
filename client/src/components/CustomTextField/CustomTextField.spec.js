@@ -4,10 +4,10 @@ import {CustomTextField} from './CustomTextField.jsx';
 
 describe("Tests for CustomTextField ", ()=> {
     const mockField = {
-            name: "dob",
-            label: "Birthday",
-            type: "date",
-            defaultValue: "2017-05-24",
+            name: "name",
+            label: "name",
+            type: "text",
+            defaultValue: "Anu",
         };
     it('Renders correctly', () => {
         const wrapper = shallow(<CustomTextField field={mockField} />);

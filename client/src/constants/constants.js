@@ -21,10 +21,12 @@ export const DETAILS = {
       defaultValue: 175,
       helperText: "This should be between 150 and 200cm",
     },
+    {
+      name: "gender",
+      label: "What Gender you identify as?",
+      type: "text",
+      defaultValue: "male",
+      helperText: `Should be 'male", 'female' or 'other'`,
+    },
   ],
 };
-
-export const FETCH_CARDS_FAILED_MSG = "Fetch Cards Action Failed";
-export const FETCH_AVAILABLE_CARDS_FAILED_MSG = "Fetch Available Card Failed";
-
-export const baseURL = "http://localhost:3000";

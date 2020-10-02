@@ -1,11 +1,10 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import "./user.css";
 import {
-  adduser,
+  fetchUser
 } from "../../store/actions/user";
 import {
   DETAILS,
@@ -17,22 +16,24 @@ import TextFieldGenerator from "../TextFieldGenerator/TextFieldGenerator.jsx";
 import Nav from "../Nav/Nav.jsx";
 
 class user extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
+  
   render() {
-    const handleChange = (e, field) => {
-      this.props.adduser({ [field]: e.target.value });
-    };
-    const goToResult = () => {
-      this.props.history.push({
-        pathname: "/cards/",
-        state: this.props.state,
-      });
+    const handleSubmit = async () => {
+      await this.props.fetchUser(this.props.state.user);
+      navigateToNextPage();
     };
 
-   
+    const navigateToNextPage = () => { 
+      const response = this.props.state.user.response;
+      if (response) {
+        this.props.history.push({
+          pathname: "/result/",
+          state: response,
+        });
+      }
+    };
+    
     return (
       <ThemeConsumer>
         {({ theme }) => (
@@ -50,7 +51,7 @@ class user extends React.Component {
                     <Grid container spacing={1}>
                       <Grid item xs={12} >
                         <form className="container">
-                          
+                         
                           <TextFieldGenerator
                             textFields={DETAILS.textFields}
                           ></TextFieldGenerator>
@@ -67,7 +68,7 @@ class user extends React.Component {
                                 className="btn"
                                 variant="contained"
                                 color="primary"
-                                onClick={goToResult}
+                                onClick={handleSubmit}
                               >
                                 Submit
                               </Button>
@@ -91,8 +92,8 @@ const mapStateToProps = (state) => ({
   state: state,
 });
 const mapDispatchToProps = (dispatch) => ({
-  adduser: (data) => {
-    dispatch(adduser(data));
+  fetchUser: (data) => {
+    return dispatch(fetchUser(data));
   }
 });
 

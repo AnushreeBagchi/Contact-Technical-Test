@@ -5,7 +5,6 @@ import configureStore from "../store/configureStore";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "../contexts/theme";
 import { Container, Grid } from "@material-ui/core";
-import Nav from "./Nav/Nav.jsx";
 
 
 const store = configureStore();

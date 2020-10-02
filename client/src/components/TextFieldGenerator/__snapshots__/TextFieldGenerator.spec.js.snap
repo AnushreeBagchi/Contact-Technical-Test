@@ -6,68 +6,55 @@ exports[`Tests for Card Renders correctly 1`] = `
     className="center"
     field={
       Object {
-        "defaultValue": "2017-05-24",
-        "label": "Birthday",
-        "name": "dob",
-        "type": "date",
-      }
-    }
-    key="dob"
-    onChange={[Function]}
-  />
-  <Connect(CustomTextField)
-    className="center"
-    field={
-      Object {
-        "helperText": "Address should be atleast 5 characters long",
-        "label": "Address",
-        "minLength": 5,
-        "name": "address",
+        "defaultValue": "Homer Simpson",
+        "label": "What's your full legal name?",
+        "name": "name",
         "type": "text",
       }
     }
-    key="address"
+    key="name"
     onChange={[Function]}
   />
   <Connect(CustomTextField)
     className="center"
     field={
       Object {
-        "helperText": "City should be atleast 5 characters long",
-        "label": "City",
-        "minLength": 3,
-        "name": "city",
+        "defaultValue": "homer@example.com",
+        "helperText": "We will use this to contact you about your application.",
+        "label": "What's your email address?",
+        "name": "email",
         "type": "text",
       }
     }
-    key="city"
+    key="email"
     onChange={[Function]}
   />
   <Connect(CustomTextField)
     className="center"
     field={
       Object {
-        "helperText": "Postal code should be atleast 5 characters long",
-        "label": "Postal",
-        "name": "postal",
-        "type": "text",
-      }
-    }
-    key="postal"
-    onChange={[Function]}
-  />
-  <Connect(CustomTextField)
-    className="center"
-    field={
-      Object {
-        "helperText": "Must be a number",
-        "label": "Annual Income",
-        "name": "income",
-        "required": true,
+        "defaultValue": 175,
+        "helperText": "This should be between 150 and 200cm",
+        "label": "How tall are you?",
+        "name": "height",
         "type": "number",
       }
     }
-    key="income"
+    key="height"
+    onChange={[Function]}
+  />
+  <Connect(CustomTextField)
+    className="center"
+    field={
+      Object {
+        "defaultValue": "male",
+        "helperText": "Should be 'male\\", 'female' or 'other'",
+        "label": "What Gender you identify as?",
+        "name": "gender",
+        "type": "text",
+      }
+    }
+    key="gender"
     onChange={[Function]}
   />
 </Fragment>
